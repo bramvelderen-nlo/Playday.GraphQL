@@ -1,0 +1,60 @@
+# Generted User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Other Files
+~$*
+*~
+*.dbmdl
+*.publishsettings
+*.binlog
+
+# Other Folders
+node_modules/
+TestResults/
+[Bb]in/
+[Oo]bj/
+
+# IDEs
+.vs/
+.vshistory/
+.localhistory/
+
+# VS Code files for those working on multiple tools
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# Visual Studio cache files: files ending in .cache can be ignored but keep track of directories ending in .cache
+*.[Cc]ache
+!?*.[Cc]ache/
+
+# Intelij Rider
+.idea/
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings
+*.DotSettings.user
+*.sln.iml
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/[Pp]ackages/repositories.config
+# NuGet v3's project.json files produces more ignorable files
+*.nuget.props
+*.nuget.targets
+.DS_Store
