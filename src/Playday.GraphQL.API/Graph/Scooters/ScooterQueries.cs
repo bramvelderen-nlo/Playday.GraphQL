@@ -7,7 +7,7 @@ namespace Playday.GraphQL.API.Graph.Scooters
 	public class ScooterQueries
 	{
 		[UseServiceScope]
-		public async Task<List<Scooter>> GetScooters([Service] ScooterService service) =>
-			await service.GetScooters();
+		public IQueryable<Scooter> GetScooters([Service] ScooterService service) =>
+			service.GetScooters();
 	}
 }

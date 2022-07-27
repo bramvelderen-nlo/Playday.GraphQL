@@ -7,7 +7,7 @@ namespace Playday.GraphQL.API.Graph.Houses
 	public class HouseQueries
 	{
 		[UseServiceScope]
-		public async Task<List<House>> GetHouses([Service] HouseService service) =>
-			await service.GetHouses();
+		public IQueryable<House> GetHouses([Service] HouseService service) =>
+			service.GetHouses();
 	}
 }

@@ -7,6 +7,7 @@ namespace Playday.GraphQL.API.Graph.Cars
 	[ExtendObjectType(OperationTypeNames.Mutation)]
 	public class CarMutations
 	{
+		[UseServiceScope]
 		public async Task<CarCreatePayload> CreateCar([Service] CarService carService, CarCreateInput input)
 			=> await carService.CreateCar(input);
 	}

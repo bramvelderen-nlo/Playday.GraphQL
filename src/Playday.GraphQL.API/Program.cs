@@ -14,12 +14,16 @@ var configuration = builder.Configuration;
 
 var connection = configuration.GetConnectionString("SqlServer");
 var graphQLServer = services.AddGraphQLServer();
-graphQLServer.RegisterDbContext<PlaydayDbContext>(DbContextKind.Pooled);
-graphQLServer.AddQueryType();
-graphQLServer.AddMutationType();
+graphQLServer.AddFiltering()
+	.AddSorting()
+	.AddFiltering()
+	.RegisterDbContext<PlaydayDbContext>(DbContextKind.Pooled)
+	.AddQueryType()
+	.AddMutationType();
 
 services
 	.AddDbContextPool<PlaydayDbContext>(options => options.UseSqlServer(connection))
+	.AddPooledDbContextFactory<PlaydayDbContext>(options => options.UseSqlServer(connection))
 	.ConfigureExceptionHandling(graphQLServer)
 	.ConfigureValidation(graphQLServer)
 	.ConfigureCars(graphQLServer)

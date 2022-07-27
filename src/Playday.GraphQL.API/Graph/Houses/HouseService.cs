@@ -12,8 +12,8 @@ namespace Playday.GraphQL.API.Graph.Houses
 		{
 			_dbContext = dbContext;
 		}
-		public async Task<List<House>> GetHouses()
-			=> await _dbContext.Houses.ToListAsync();
+		public IQueryable<House> GetHouses()
+			=> _dbContext.Houses;
 
 	}
 }

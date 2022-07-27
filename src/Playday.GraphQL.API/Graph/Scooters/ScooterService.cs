@@ -12,8 +12,8 @@ namespace Playday.GraphQL.API.Graph.Scooters
 		{
 			_dbContext = dbContext;
 		}
-		public async Task<List<Scooter>> GetScooters()
-			=> await _dbContext.Scooters.ToListAsync();
+		public IQueryable<Scooter> GetScooters()
+			=> _dbContext.Scooters;
 
 	}
 }
