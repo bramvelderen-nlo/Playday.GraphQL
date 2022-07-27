@@ -23,7 +23,6 @@ graphQLServer.AddFiltering()
 
 services
 	.AddDbContextPool<PlaydayDbContext>(options => options.UseSqlServer(connection))
-	.AddPooledDbContextFactory<PlaydayDbContext>(options => options.UseSqlServer(connection))
 	.ConfigureExceptionHandling(graphQLServer)
 	.ConfigureValidation(graphQLServer)
 	.ConfigureCars(graphQLServer)
