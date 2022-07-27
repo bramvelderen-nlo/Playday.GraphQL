@@ -8,8 +8,8 @@ namespace Playday.GraphQL.API.Graph.Cars
 			this IServiceCollection services,
 			IRequestExecutorBuilder graphQLBuilder)
 		{
-			graphQLBuilder.AddQueryType<CarQueries>();
-			graphQLBuilder.AddMutationType<CarMutations>();
+			graphQLBuilder.AddTypeExtension<CarQueries>();
+			graphQLBuilder.AddTypeExtension<CarMutations>();
 			graphQLBuilder.ConfigureSchema(schemaBuilder =>
 			{
 				schemaBuilder.Use<CarValidationMiddleware>();

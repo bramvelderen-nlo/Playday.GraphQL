@@ -1,4 +1,5 @@
-﻿using Playday.GraphQL.API.Graph.Cars.Inputs;
+﻿using Microsoft.EntityFrameworkCore;
+using Playday.GraphQL.API.Graph.Cars.Inputs;
 using Playday.GraphQL.API.Graph.Cars.Payloads;
 using Playday.GraphQL.Common.ExceptionHandling;
 using Playday.GraphQL.Database;
@@ -38,6 +39,8 @@ namespace Playday.GraphQL.API.Graph.Cars
 			};
 		}
 
+		public async Task<List<Car>> GetCars()
+			=> await _dbContext.Cars.ToListAsync();
 
 	}
 }

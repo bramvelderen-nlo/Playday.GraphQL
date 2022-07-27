@@ -1,16 +1,13 @@
-﻿using Playday.GraphQL.Database.Models;
+﻿using HotChocolate;
+using Playday.GraphQL.Database.Models;
 
 namespace Playday.GraphQL.API.Graph.Cars
 {
+	[ExtendObjectType(OperationTypeNames.Query)]
 	public class CarQueries
 	{
-		public Car GetCar() =>
-			new Car
-			{
-				Id = Guid.NewGuid(),
-				Brand = "BMW",
-				LicensePlate = "22-33-44",
-				Name = "A1"
-			};
+		[UseServiceScope]
+		public async Task<List<Car>> GetCars([Service] CarService service) =>
+			await service.GetCars();
 	}
 }

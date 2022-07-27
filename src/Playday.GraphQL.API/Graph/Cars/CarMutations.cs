@@ -4,6 +4,7 @@ using Playday.GraphQL.Database;
 
 namespace Playday.GraphQL.API.Graph.Cars
 {
+	[ExtendObjectType(OperationTypeNames.Mutation)]
 	public class CarMutations
 	{
 		public async Task<CarCreatePayload> CreateCar([Service] CarService carService, CarCreateInput input)

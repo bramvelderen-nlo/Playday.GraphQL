@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Playday.GraphQL.Database;
 
@@ -11,9 +12,10 @@ using Playday.GraphQL.Database;
 namespace Playday.GraphQL.Database.Migrations
 {
     [DbContext(typeof(PlaydayDbContext))]
-    partial class PlaydayDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220726151542_Adds-new-tables")]
+    partial class Addsnewtables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
